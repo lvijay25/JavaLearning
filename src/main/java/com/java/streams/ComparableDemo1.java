@@ -1,9 +1,8 @@
-package com.java.collectionstreams;
+package com.java.streams;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 class Player implements Comparable<Player> {
 

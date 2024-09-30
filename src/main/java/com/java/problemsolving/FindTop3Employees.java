@@ -41,7 +41,6 @@ class Employee
     public String toString(){
         return "Employee {" + name + ", " + age + ", " + gender + ", " + ", " + department + ", " + salary + "}";
     }
-
 }
 
 public class FindTop3Employees {
