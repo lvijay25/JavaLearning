@@ -11,6 +11,8 @@ public class ArraysDemo {
         elements.add("Ben");
         elements.add("Phil W");
         elements.add("Nolan");
+        elements.add("Myra Kerals");
+        elements.add("Manuel Bueno");
 
         System.out.println(elements);
 
