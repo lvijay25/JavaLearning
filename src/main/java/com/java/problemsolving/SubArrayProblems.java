@@ -6,7 +6,6 @@ import java.util.HashSet;
 public class SubArrayProblems {
 
         public static void pairSum(int[] arr, int sum){
-
             for(int i = 0; i < arr.length - 1; i++){
                 int j = i + 1;
                 if(arr[i] + arr[j] == sum){

@@ -21,21 +21,18 @@ interface AdminPrivileges{
 
 class User {
     private String name;
-
     public User(String name){
         this.name = name;
     }
-
     public String getName(){
         return name;
     }
 }
-class AdminUser extends User implements AdminPrivileges{
 
+class AdminUser extends User implements AdminPrivileges{
     public AdminUser(String name) {
         super(name);
     }
-
     public void accessAdminPanel(){
         System.out.println(getName() + " can access Admin Panel...");
     }
@@ -45,14 +42,15 @@ public class MarkerInterface {
     public static void main(String[] args){
         User normalUser = new User("Normal User");
         AdminUser adminUser = new AdminUser("AdminUser");
-
+        System.out.println(adminUser.getName());
+        // check Access Privilege
         checkAccessPrivilege(normalUser);
         checkAccessPrivilege(adminUser);
     }
 
     public static void checkAccessPrivilege(User user){
         if(user instanceof AdminPrivileges){
-            ((AdminUser) user).accessAdminPanel();
+           ((AdminUser)user).accessAdminPanel();
         }else {
             System.out.println(user.getName() + " DO NOT have access");
         }

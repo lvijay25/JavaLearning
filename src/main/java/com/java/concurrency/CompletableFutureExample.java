@@ -22,6 +22,6 @@ public class CompletableFutureExample {
                 System.out.println("schedule thread " + i);
             }
         };
-        Executors.newScheduledThreadPool(1).schedule(runnable, 1, TimeUnit.SECONDS);
+        Executors.newScheduledThreadPool(1).schedule(runnable, 2, TimeUnit.SECONDS);
     }
 }

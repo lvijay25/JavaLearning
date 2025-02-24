@@ -3,13 +3,17 @@ package com.java.learning;
 import java.util.Arrays;
 
 public class MoveZeroToLast {
+
+    public static void swap(int[] a, int i, int j){
+        int t = a[i];
+        a[i] = a[j];
+        a[j] = t;
+    }
     public static int[] moveZerosToLast(int[] array){
         int zeros = 0;
         for(int i = 0; i < array.length; i++){
             if(array[i] != 0 && array[zeros] == 0) {
-                int temp = array[i] ;
-                array[i] = array[zeros];
-                array[zeros] = temp;
+                swap(array, i, zeros);
             }
             if(array[zeros] != 0){
                 zeros++;
@@ -21,9 +25,7 @@ public class MoveZeroToLast {
         int zeros = 0;
         for(int i = 0; i < array.length; i++){
             if(array[i] == 0 && array[zeros] != 0) {
-                int temp = array[i] ;
-                array[i] = array[zeros];
-                array[zeros] = temp;
+                swap(array, i, zeros);
             }
             if(array[zeros] == 0){
                 zeros++;
@@ -31,7 +33,7 @@ public class MoveZeroToLast {
         }
         return array;
     }
-
+    
     public static void main(String[] args){
         int[] array = {23, 0, 22, 36, 0, 85, 0, 55, 0};
 

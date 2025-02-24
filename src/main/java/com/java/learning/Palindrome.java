@@ -24,9 +24,9 @@ public class Palindrome {
         Pattern pattern = Pattern.compile("[^a-zA-Z0-9]");
        // Matcher matcher = pattern.matcher(word);
         // boolean check = matcher.matches();
-        String strCheck = word.replaceAll(String.valueOf(pattern), "").toLowerCase();
-        System.out.println(strCheck);
-        return IntStream.range(0, strCheck.length()/2).noneMatch(i -> strCheck.charAt(i) != strCheck.charAt(strCheck.length() - i - 1));
+        String str = word.replaceAll(String.valueOf(pattern), "").toLowerCase();
+        System.out.println(str);
+        return IntStream.range(0, str.length()/2).noneMatch(i -> str.charAt(i) != str.charAt(str.length() - i - 1));
     }
 
     public static void main(String[] args){
@@ -34,7 +34,7 @@ public class Palindrome {
         System.out.println(palindrome);
 
         String str = "Hello@World#2024!";
-        boolean palindromecheck = palindromeUsingStream(str);
-        System.out.println(palindromecheck);
+        boolean palindromic = palindromeUsingStream(str);
+        System.out.println(palindromic);
     }
 }

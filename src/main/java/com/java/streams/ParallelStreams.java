@@ -1,17 +1,20 @@
 package com.java.streams;
 
+import com.java.learning.Timer;
+
 import java.util.List;
 import java.util.stream.Stream;
 
 public class ParallelStreams {
     public static void main(String[] rider){
-        Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5, 6, 7, 8);
 
-        stream.parallel().peek(System.out::print).forEachOrdered(System.out::print);
+        Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5, 6, 7, 8);
+        Timer.counter(() ->
+        stream.parallel().peek(System.out::print).forEachOrdered(System.out::print));
 
         List<String> list = List.of("A", "B", "C", "D");
-
-        list.stream().peek(System.out::print).forEach(System.out::println);
+        Timer.counter(() ->
+        list.stream().peek(System.out::print).forEach(System.out::println));
 
         List<?> data = List.of(20, 30, 40, "10");
 

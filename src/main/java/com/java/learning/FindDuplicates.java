@@ -11,7 +11,7 @@ public class FindDuplicates {
         for(int i = 0; i < array.length; i++){
             if(array[duplicate] == array[i]){
                 duplicate = array[i];
-
+                count++;
             }
         }
         return duplicate;
@@ -29,8 +29,7 @@ public class FindDuplicates {
     }
     public static void findDuplicate(int[] array){
 
-        Set<Integer> duplicate = new HashSet<Integer>();
-
+        Set<Integer> duplicate = new HashSet<>();
         for(Integer set : array){
             if(!duplicate.add(set)){
                 System.out.println(" Duplicates " + set);
@@ -39,9 +38,7 @@ public class FindDuplicates {
     }
 
     public static void findingDuplicates(int[] array){
-
         Set<Integer> duplicate = new LinkedHashSet<>();
-
         for(Integer elements : array){
             if(!duplicate.add(elements)){
                 System.out.println(new StringBuilder().append("Duplicates ").append(elements).toString());

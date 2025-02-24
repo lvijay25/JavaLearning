@@ -73,7 +73,7 @@ public class GenericWildCard {
         vehicle.forEach(bus -> ((Vehicle) bus).display());
     }
 
-    public static void constructAllVehiclesBoundedType(){
-
+    public static void constructAllVehiclesBoundedType(List<?> vehicle){
+        vehicle.forEach(bus -> ((Vehicle) bus).display());
     }
 }

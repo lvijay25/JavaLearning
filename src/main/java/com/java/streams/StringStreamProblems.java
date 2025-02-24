@@ -12,6 +12,11 @@ public class StringStreamProblems {
         return (index2 - index1 - 1);
     }
 
+
+    public static int findLengthBetweenStringUsingSubString(String word, String word1, String word2){
+        return word.substring(word.indexOf(word1), word.indexOf(word2)).length();
+    }
+
     public static void findLengthBetweenStringUsingStreams(String a, String b, String c){
         Stream.of(a).forEach(x -> System.out.println(x.indexOf(c) - x.indexOf(b) - 1));
     }
@@ -57,5 +62,13 @@ public class StringStreamProblems {
         String reverseString = reverseEachWordsInAGivenStringUsingLoop(a);
         System.out.println(reverseString);
         // output: ehT avaJ si tsom hguot egaugnal ni dlrow
+
+        String greetings = "Serialization is a mechanism of converting the state of an object into a byte stream";
+        String word1 = "is";
+        String word2 = "into";
+
+        int lengthOfString = findLengthBetweenStringUsingSubString(greetings, word1, word2);
+        System.out.println("Length Of a String " + lengthOfString);
+
     }
 }
