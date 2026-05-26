@@ -8,20 +8,28 @@ public class CompletableFutureExample {
 
         Runnable command = null;
         try {
-            command = () -> System.out.println("Hello");
+            command = () -> System.out.println("Runnable in Try Catch Block");
             command.run();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        Executor executors = CompletableFuture.delayedExecutor(1, TimeUnit.MINUTES);
+        Executor executors = CompletableFuture.delayedExecutor(3, TimeUnit.SECONDS);
         executors.execute(command);
 
         Runnable runnable = () -> {
-            System.out.println("Hello");
+            System.out.println("Runnable Outside Try Catch Block");
             for(int i = 0; i < 5; i++){
-                System.out.println("schedule thread " + i);
+                System.out.println("Scheduler Thread - " + i);
             }
         };
-        Executors.newScheduledThreadPool(1).schedule(runnable, 2, TimeUnit.SECONDS);
+
+        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+        try {
+            scheduler.schedule(runnable, 5, TimeUnit.SECONDS);
+        } catch (Exception e){
+            throw new RuntimeException(e);
+        } finally {
+            scheduler.shutdown();
+        }
     }
 }
