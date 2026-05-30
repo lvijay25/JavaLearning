@@ -46,7 +46,7 @@ class Employee
 public class FindTop3Employees {
 
     public static void main(String[] args) throws java.lang.Exception {
-        // your code goes here
+        // Find top 3 employees from each department
 
         List<Employee> list = Arrays.asList(
                 new Employee("Steve", 25, "Male", "Finance", 55000),
@@ -61,10 +61,6 @@ public class FindTop3Employees {
                 new Employee("Jocab", 46, "Male", "Finance", 15000),
                 new Employee("Johnson", 41, "Male", "HR", 68000),
                 new Employee("Jack Mobab", 33, "Male", "Finance", 36000));
-
-	  /*for(Employee e : list){
-		  System.out.println(e);
-		}*/
 
         Map<String, List<Employee>> employeeList = list.stream()
                 .filter(e -> e.getGender().equalsIgnoreCase("Male"))
