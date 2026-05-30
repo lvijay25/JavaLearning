@@ -25,10 +25,10 @@ public class AtomicOperations {
                 atomicOperations.counter.incrementAndGet();
             }
         });
-
+        // 1. START Thread
         thread1.start();
         thread2.start();
-
+        // 2. JOIN Main thread to execute other line of code after individual threads to complete.
         thread1.join();
         thread2.join();
 
