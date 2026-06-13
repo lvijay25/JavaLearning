@@ -1,6 +1,6 @@
 package com.java.streams;
 
-import com.java.learning.Timer;
+import com.java.coding_problems.Timer;
 
 import java.util.List;
 import java.util.stream.Stream;
